@@ -10,6 +10,40 @@ b=a.split()
 print(b)
 c="".join(b)
 print(c)
+# Write a Python program to check if file is python file or text file or c file or any other file using os module.
+import os
+def simple_file_type(file_path):
+    _, ext = os.path.splitext(file_path)
+    if ext == ".py":
+        print("It's a Python (.py) file 🐍")
+    elif ext == ".c":
+        print("It's a C (.c) file 💻")
+    elif ext == ".txt":
+        print("It's a Text (.txt) file 📄")
+    else:
+        print("Unknown or unsupported file type.")
+file_path = r"C:\Users\DELL\.vscode\Arya College\OOPS\game.py" 
+simple_file_type(file_path)
+# Write a Python program to count the number of lines, words, and characters in a text file.
+file_path = r'C:\Users\DELL\.vscode\Arya College\OOPS\example.txt'
+try:
+    with open(file_path, 'r') as file:
+        lines = file.readlines()
+        num_lines = len(lines)
+        num_words = sum(len(line.split()) for line in lines)
+        num_chars = sum(len(line) for line in lines)
+
+    print(f"Number of lines: {num_lines}")
+    print(f"Number of words: {num_words}")
+    print(f"Number of characters: {num_chars}")
+except FileNotFoundError:
+    print(f"File not found: {file_path}")
+except Exception as e:
+    print(f"An error occurred: {e}")
+# Write a Python program to read a text file and print its contents in reverse order.
+with open(file_path, 'r') as file:
+    for line in file:
+        print(line.strip()[::-1])
 # Write a Python program to check if two strings are similar using the difflib module.
 from difflib import SequenceMatcher
 def Nearly_Equal(a, b):
