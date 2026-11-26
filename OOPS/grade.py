@@ -14,4 +14,4 @@ else:
     grade = "F"
 
 # Display the grade
-print(f"Your grade is: {grade}")
+print(f"Your grade is: {grade}")     # f is used for string formatting such that we don't have to concatenate strings and variables manually using the + operator.
